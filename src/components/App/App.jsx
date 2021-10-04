@@ -11,14 +11,18 @@ export default function App() {
   const [bad, setBad] = useState(0);
 
   const counterFeedback = nameOption => {
-    if (nameOption === 'good') {
-      setGood(good + 1);
-    }
-    if (nameOption === 'neutral') {
-      setNeutral(neutral + 1);
-    }
-    if (nameOption === 'bad') {
-      setBad(bad + 1);
+    switch (nameOption) {
+      case 'good':
+        setGood(good + 1);
+        break;
+      case 'neutral':
+        setNeutral(neutral + 1);
+        break;
+      case 'bad':
+        setBad(bad + 1);
+        break;
+      default:
+        return;
     }
   };
 
